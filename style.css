@@ -49,7 +49,7 @@ body {
 }
 
 .sh-topbar-inner {
-  max-width: 1060px;
+  max-width: 1360px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -97,7 +97,7 @@ body {
 }
 
 .sh-hero-inner {
-  max-width: 1060px;
+  max-width: 1360px;
   margin: 0 auto;
 }
 
@@ -139,18 +139,21 @@ body {
 /* ── Two-column grid ── */
 .sh-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 300px;
-  gap: 32px;
-  max-width: 1060px;
+  grid-template-columns: minmax(0, 2.4fr) minmax(260px, 0.8fr);
+  gap: 36px;
+  max-width: 1360px;
   margin: 0 auto;
-  padding: 40px 24px 52px;
+  padding: 36px 32px 52px;
   align-items: start;
 }
 
-@media (max-width: 860px) {
+@media (max-width: 960px) {
   .sh-layout {
     grid-template-columns: 1fr;
-    padding: 28px 16px 40px;
+    padding: 28px 20px 40px;
+  }
+  .sh-feature-wrap {
+    padding: 28px 20px 0;
   }
   .sh-topbar-inner {
     flex-direction: column;
@@ -235,24 +238,38 @@ body {
   line-height: 1.57;
 }
 
-/* ── Hero image (replaces placeholder) ── */
+/* ── Feature image wrapper (sits above the two-column grid) ── */
+.sh-feature-wrap {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 40px 32px 0;
+}
+
 .sh-hero-image {
-  margin: 1.5rem 0;
   border-radius: 14px;
   overflow: hidden;
   border: 1px solid rgba(159, 202, 54, .22);
-  box-shadow: 0 10px 32px rgba(4, 7, 4, .52);
+  box-shadow: 0 12px 38px rgba(4, 7, 4, .56);
 }
 
 .sh-hero-image img {
   display: block;
   width: 100%;
   height: auto;
+  max-height: 420px;
+  object-fit: cover;
+  object-position: center 40%;
   border-radius: 14px 14px 0 0;
 }
 
+@media (min-width: 1500px) {
+  .sh-hero-image img {
+    max-height: 500px;
+  }
+}
+
 .sh-hero-image figcaption {
-  background: rgba(18, 26, 16, .88);
+  background: rgba(14, 20, 13, .92);
   color: var(--sh-panel-muted);
   font-size: .8rem;
   font-style: italic;
@@ -359,7 +376,7 @@ body {
 }
 
 .sh-log-inner {
-  max-width: 1060px;
+  max-width: 1360px;
   margin: 0 auto;
 }
 
@@ -438,6 +455,12 @@ body {
   .sh-log-section {
     padding: 36px 16px 48px;
   }
+  .sh-feature-wrap {
+    padding: 20px 14px 0;
+  }
+  .sh-hero-image img {
+    max-height: 240px;
+  }
 }
 
 /* ── Footer ── */
@@ -448,7 +471,7 @@ body {
 }
 
 .sh-footer-inner {
-  max-width: 1060px;
+  max-width: 1360px;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
