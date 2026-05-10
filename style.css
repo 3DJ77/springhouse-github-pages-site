@@ -235,7 +235,33 @@ body {
   line-height: 1.57;
 }
 
-/* ── Photo placeholder ── */
+/* ── Hero image (replaces placeholder) ── */
+.sh-hero-image {
+  margin: 1.5rem 0;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(159, 202, 54, .22);
+  box-shadow: 0 10px 32px rgba(4, 7, 4, .52);
+}
+
+.sh-hero-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 14px 14px 0 0;
+}
+
+.sh-hero-image figcaption {
+  background: rgba(18, 26, 16, .88);
+  color: var(--sh-panel-muted);
+  font-size: .8rem;
+  font-style: italic;
+  padding: 9px 16px;
+  border-top: 1px solid rgba(111, 125, 103, .4);
+  letter-spacing: .02em;
+}
+
+/* ── Photo placeholder (kept for future use) ── */
 .sh-photo-placeholder {
   min-height: 210px;
   border-radius: 14px;
