@@ -1,0 +1,444 @@
+/* ============================================================
+   Springhouse Project — style.css
+   Standalone static site stylesheet.
+   Prefixed .sh- throughout to keep the namespace clean.
+   ============================================================ */
+
+/* ── Reset & base ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --sh-green-lime:    #9fca36;
+  --sh-green-soft:    #c9e58a;
+  --sh-earth:         #b98552;
+  --sh-earth-dark:    #6f4526;
+  --sh-card:          #2d352e;
+  --sh-card-mid:      #404a40;
+  --sh-panel-text:    #e7eedf;
+  --sh-panel-muted:   #b9c6ad;
+  --sh-panel-line:    #6f7d67;
+  --sh-foam:          #edf7d8;
+  --sh-spring:        #dbecc4;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #0f1a0c;
+  color: var(--sh-panel-text);
+  line-height: 1.58;
+  font-size: 1rem;
+}
+
+/* ── Top navigation bar ── */
+.sh-topbar {
+  background: linear-gradient(90deg, #020302, #0a1008 60%, #17240f);
+  color: #f8ffe9;
+  border-bottom: 4px solid var(--sh-green-lime);
+  padding: 16px 28px;
+  box-shadow: 0 6px 22px rgba(0, 0, 0, .4);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.sh-topbar-inner {
+  max-width: 1060px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+
+.sh-brand {
+  font-weight: 800;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  font-size: .95rem;
+  color: #f4ffe6;
+  white-space: nowrap;
+}
+
+.sh-nav {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  font-size: .88rem;
+}
+
+.sh-nav a {
+  color: #cde8a4;
+  text-decoration: none;
+  letter-spacing: .02em;
+  transition: color .15s;
+}
+
+.sh-nav a:hover {
+  color: #f0ffcc;
+}
+
+/* ── Hero ── */
+.sh-hero {
+  background:
+    linear-gradient(90deg, rgba(4, 7, 4, .96), rgba(12, 23, 9, .78) 52%, rgba(58, 36, 14, .55)),
+    radial-gradient(circle at 74% 16%, rgba(159, 202, 54, .32), transparent 30%),
+    radial-gradient(circle at 18% 84%, rgba(137, 86, 45, .26), transparent 34%),
+    linear-gradient(135deg, #152312, #0b1309 62%, #281a0f);
+  color: #fbfff0;
+  padding: 72px 28px 84px;
+  border-bottom: 1px solid rgba(159, 202, 54, .38);
+}
+
+.sh-hero-inner {
+  max-width: 1060px;
+  margin: 0 auto;
+}
+
+.sh-eyebrow {
+  color: var(--sh-green-soft);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .15em;
+  font-size: .78rem;
+  margin-bottom: 14px;
+}
+
+.sh-hero-title {
+  margin: 0;
+  font-size: clamp(2.4rem, 6.5vw, 4.8rem);
+  line-height: .95;
+  letter-spacing: -.04em;
+  color: #f6ffe8;
+  text-shadow: 0 3px 20px rgba(0, 0, 0, .42);
+}
+
+.sh-tagline {
+  font-size: clamp(1.06rem, 2vw, 1.42rem);
+  color: #e2eecb;
+  max-width: 760px;
+  margin: 24px 0 0;
+  line-height: 1.56;
+}
+
+/* ── Content wrap (earthy mid-tone background) ── */
+.sh-wrap {
+  background:
+    radial-gradient(circle at 16% 6%, rgba(159, 202, 54, .14), transparent 26%),
+    radial-gradient(circle at 90% 26%, rgba(111, 69, 38, .16), transparent 32%),
+    linear-gradient(180deg, #1a2618 0%, #1f2d1c 55%, #2a1f10 100%);
+  padding-bottom: 0;
+}
+
+/* ── Two-column grid ── */
+.sh-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 32px;
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 40px 24px 52px;
+  align-items: start;
+}
+
+@media (max-width: 860px) {
+  .sh-layout {
+    grid-template-columns: 1fr;
+    padding: 28px 16px 40px;
+  }
+  .sh-topbar-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
+/* ── Main article panel ── */
+.sh-panel {
+  background:
+    radial-gradient(circle at 6% 0%, rgba(159, 202, 54, .07), transparent 28%),
+    linear-gradient(180deg, var(--sh-card-mid) 0%, var(--sh-card) 55%);
+  color: var(--sh-panel-text);
+  border: 1px solid var(--sh-panel-line);
+  border-radius: 18px;
+  padding: clamp(24px, 4vw, 44px);
+  box-shadow: 0 16px 38px rgba(5, 8, 4, .42);
+  line-height: 1.64;
+}
+
+.sh-panel h2 {
+  font-size: 1.48rem;
+  margin: 2rem 0 .7rem;
+  line-height: 1.22;
+  color: #eff7de;
+  border-bottom: 2px solid rgba(185, 133, 82, .4);
+  padding-bottom: .32rem;
+}
+
+.sh-panel h2:first-child {
+  margin-top: 0;
+}
+
+.sh-panel p {
+  margin: .7rem 0 1rem;
+}
+
+.sh-panel ul {
+  padding-left: 1.25rem;
+  margin: .5rem 0 1.1rem;
+}
+
+.sh-panel li {
+  margin: .4rem 0;
+}
+
+.sh-panel li::marker {
+  color: var(--sh-green-soft);
+}
+
+.sh-panel a {
+  color: #d7f08a;
+}
+
+.sh-panel strong {
+  color: #fbffe8;
+}
+
+/* ── Lede paragraph ── */
+.sh-lede {
+  font-size: 1.15rem;
+  color: #eaf4d9;
+  border-left: 6px solid var(--sh-earth);
+  background: rgba(16, 24, 17, .7);
+  border-radius: 0 12px 12px 0;
+  padding: 14px 18px;
+  margin-bottom: 1.6rem;
+  line-height: 1.58;
+}
+
+/* ── Callout box ── */
+.sh-callout {
+  background: #38453a;
+  color: #edf6de;
+  border: 1px solid #6c7d5f;
+  border-left: 7px solid var(--sh-earth);
+  border-radius: 12px;
+  padding: 17px 20px;
+  margin: 1.5rem 0;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .07);
+  line-height: 1.57;
+}
+
+/* ── Photo placeholder ── */
+.sh-photo-placeholder {
+  min-height: 210px;
+  border-radius: 14px;
+  border: 2px dashed #8b7050;
+  background:
+    linear-gradient(135deg, rgba(159, 202, 54, .12), rgba(185, 133, 82, .16)),
+    linear-gradient(135deg, #303a30, #473a27);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #c4d4ae;
+  padding: 24px;
+  margin: 1.5rem 0;
+  font-style: italic;
+  font-size: .94rem;
+}
+
+/* ── Sidebar ── */
+.sh-sidebar {
+  display: grid;
+  gap: 16px;
+}
+
+.sh-box {
+  background: linear-gradient(180deg, var(--sh-card-mid), var(--sh-card));
+  color: var(--sh-panel-text);
+  border: 1px solid var(--sh-panel-line);
+  border-radius: 14px;
+  padding: 20px 22px;
+  box-shadow: 0 10px 28px rgba(5, 8, 4, .36);
+}
+
+.sh-box-title {
+  margin: 0 0 .6rem;
+  font-size: .88rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--sh-green-soft);
+}
+
+.sh-meta-list {
+  list-style: disc;
+  padding-left: 1.1rem;
+  margin: .4rem 0 0;
+  font-size: .9rem;
+}
+
+.sh-meta-list li {
+  margin: .38rem 0;
+}
+
+.sh-meta-list li::marker {
+  color: var(--sh-green-soft);
+}
+
+.sh-cat-list a {
+  color: #cde89a;
+  text-decoration: none;
+}
+
+.sh-cat-list a:hover {
+  color: #f0ffcc;
+}
+
+.sh-meta {
+  color: var(--sh-panel-muted);
+  font-size: .88rem;
+  line-height: 1.58;
+  margin: .35rem 0 0;
+}
+
+/* ── Status pill ── */
+.sh-status-pill {
+  display: inline-block;
+  padding: 5px 12px;
+  background: #0d1509;
+  color: #d9f09e;
+  border: 1px solid rgba(159, 202, 54, .55);
+  border-radius: 999px;
+  font-size: .76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  margin-bottom: 10px;
+}
+
+/* ── Build log section ── */
+.sh-log-section {
+  background:
+    radial-gradient(circle at 4% 0%, rgba(159, 202, 54, .1), transparent 22%),
+    linear-gradient(180deg, #192417 0%, #1c2a18 100%);
+  border-top: 1px solid rgba(159, 202, 54, .2);
+  padding: 52px 24px 64px;
+}
+
+.sh-log-inner {
+  max-width: 1060px;
+  margin: 0 auto;
+}
+
+.sh-log-header {
+  margin-bottom: 32px;
+}
+
+.sh-log-heading {
+  margin: 0 0 6px;
+  font-size: 1.55rem;
+  color: #edf6de;
+  letter-spacing: -.02em;
+}
+
+.sh-log-sub {
+  color: var(--sh-panel-muted);
+  font-size: .88rem;
+  letter-spacing: .02em;
+}
+
+.sh-log-entries {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 22px;
+}
+
+/* ── Log entry card ── */
+.sh-log-card {
+  background: linear-gradient(180deg, #3a443b, #2c352d);
+  border: 1px solid #5a6a53;
+  border-radius: 14px;
+  padding: 22px 24px 20px;
+  box-shadow: 0 8px 22px rgba(4, 7, 4, .38);
+  transition: border-color .18s, box-shadow .18s;
+}
+
+.sh-log-card:hover {
+  border-color: rgba(159, 202, 54, .5);
+  box-shadow: 0 10px 28px rgba(4, 7, 4, .5);
+}
+
+.sh-log-date {
+  color: var(--sh-panel-muted);
+  font-size: .8rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.sh-log-title {
+  margin: 0 0 10px;
+  font-size: 1.08rem;
+  color: #e8f5d0;
+  line-height: 1.3;
+}
+
+.sh-log-excerpt {
+  color: var(--sh-panel-muted);
+  font-size: .9rem;
+  line-height: 1.6;
+  margin: 0 0 14px;
+}
+
+.sh-log-more {
+  display: inline-block;
+  color: var(--sh-green-soft);
+  font-size: .82rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+}
+
+@media (max-width: 600px) {
+  .sh-log-entries {
+    grid-template-columns: 1fr;
+  }
+  .sh-log-section {
+    padding: 36px 16px 48px;
+  }
+}
+
+/* ── Footer ── */
+.sh-footer {
+  background: linear-gradient(90deg, #020402, #111c0d 70%, #2b1a0c);
+  border-top: 4px solid var(--sh-green-lime);
+  padding: 28px 28px;
+}
+
+.sh-footer-inner {
+  max-width: 1060px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 28px;
+  align-items: baseline;
+}
+
+.sh-footer-brand {
+  color: #dff0bb;
+  font-weight: 700;
+  font-size: .94rem;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+
+.sh-footer-tag {
+  color: var(--sh-panel-muted);
+  font-size: .84rem;
+}
