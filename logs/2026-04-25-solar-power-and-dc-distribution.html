@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Coop and greenhouse layout begins. Power architecture documented: 700W active across 24V and 12V systems, 8D lead-acid battery bank, and the plan for 2,800W total solar capacity." />
+  <title>Solar Power and DC Distribution — Springhouse Project</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+  <!-- ── Top Navigation ── -->
+  <header class="sh-topbar">
+    <div class="sh-topbar-inner">
+      <div class="sh-brand">Springhouse Project</div>
+      <nav class="sh-nav" aria-label="Site navigation">
+        <a href="../index.html">Home</a>
+        <a href="index.html">Build Log</a>
+        <a href="../index.html#solar">Solar &amp; Power</a>
+        <a href="../index.html#greenhouse">Greenhouse</a>
+        <a href="../index.html#field-notes">Field Notes</a>
+        <a href="../index.html#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ── Content ── -->
+  <div class="sh-wrap">
+    <div class="sh-breadcrumb">
+      <a href="../index.html">Home</a> › <a href="index.html">Build Log</a> › Solar Power and DC Distribution
+    </div>
+
+    <div class="sh-log-page-wrap">
+      <article class="sh-panel">
+
+        <div class="sh-log-page-date">April 25, 2026</div>
+        <h1 class="sh-log-page-title">Solar Power and DC Distribution</h1>
+        <div class="sh-log-page-tags">
+          <span class="sh-log-tag">solar</span>
+          <span class="sh-log-tag">DC power</span>
+          <span class="sh-log-tag">battery bank</span>
+          <span class="sh-log-tag">24V system</span>
+          <span class="sh-log-tag">greenhouse</span>
+          <span class="sh-log-tag">coop</span>
+        </div>
+
+        <p class="sh-lede">We started laying out the new chicken coop and greenhouse today. The weather has not been cooperating — but the power side of the build is well underway, and this is a good moment to put the architecture on record.</p>
+
+        <h2>Site Layout: Coop and Greenhouse</h2>
+
+        <p>The coop and greenhouse positions were staked out today. Construction continues as soon as the weather gives us a window — there is no shortage of work to do once the sun shows up. The chickens are watching the proceedings closely, which is either encouraging or just an indication that the feed is nearby.</p>
+
+        <figure class="sh-log-image-placeholder">
+          <div class="sh-image-placeholder-box">Image placeholder: add coop or greenhouse layout / site overview photo here</div>
+          <figcaption>Caption placeholder — coop and greenhouse site layout, April 2026.</figcaption>
+        </figure>
+
+        <h2>The Power Problem</h2>
+
+        <p>The core problem with running any real load off-grid is what happens to the energy between the panel and the load. Solar panels output DC. Batteries store DC. Most of the equipment that actually matters on a rural property — sensors, cameras, small controllers, monitoring gear — ultimately runs on DC. A conventional off-grid setup runs that energy through an inverter to make AC, then through adapters to convert it back to DC for the devices that actually use it. That conversion chain costs roughly 15–30% of the energy every time it runs.</p>
+
+        <p>Springhouse is built to avoid that penalty wherever practical. Where a load can run on DC directly, it does. The goal is a property where the solar harvest does real work — charging tools, running monitoring equipment, supporting greenhouse and coop systems — rather than evaporating through unnecessary conversion.</p>
+
+        <h2>Current Power Architecture</h2>
+
+        <p>The active harvest as of this build stage is <strong>700 watts total</strong> — 500W on the 24V system and 200W on the primary 12V system. The remaining planned capacity awaits a ground-mount position. The full plan targets <strong>2,800 watts of panel capacity</strong>.</p>
+
+        <figure class="sh-log-image-placeholder">
+          <div class="sh-image-placeholder-box">Image placeholder: add solar panel array or battery bank photo here</div>
+          <figcaption>Caption placeholder — 5-panel solar string on temporary ground mount, active harvest 500W on 24V system.</figcaption>
+        </figure>
+
+        <p>Power system breakdown:</p>
+
+        <ul>
+          <li><strong>24V harvest:</strong> 500W active. Five-panel solar string on a temporary ground mount while optimal placement is tested. South-facing, tilted for latitude.</li>
+          <li><strong>12V harvest:</strong> 200W active on the primary 12V system.</li>
+          <li><strong>Battery bank:</strong> Two 8D Duracell lead-acid batteries wired for 24V. The bank came through winter in rough shape but has been recovering well — currently topped up and holding charge. Lead-acid at this scale is heavy and slow to charge, but it is field-repairable and does not require exotic handling.</li>
+          <li><strong>Charge control:</strong> MPPT charge controller managing the 24V bank. DC load circuit runs directly from the controller, keeping the automation and monitoring hardware on a dedicated low-voltage path that does not compete with the main bank.</li>
+          <li><strong>DC distribution:</strong> DC-DC converters step voltage down for sensors, cameras, and control hardware. No AC conversion required on these paths — the energy goes panel → bank → DC rail → device.</li>
+          <li><strong>AC path:</strong> A pure sine wave inverter handles larger AC loads where DC conversion is not practical. A smaller inverter handles cordless tool charging directly from solar.</li>
+        </ul>
+
+        <h2>Why This Architecture</h2>
+
+        <p>The 24V bank was chosen over 12V for the main system because of wire loss. At 12V, running useful current across any real distance requires heavy wire or significant voltage drop. At 24V, the same power travels on lighter wire with less loss. For a rural property where runs between the panel, the battery, and the load might cover 20–50 feet or more, that difference matters.</p>
+
+        <p>The lead-acid choice is straightforward: the batteries were available, they are recoverable after a hard winter, and the chemistry is well understood. Lithium would be lighter and more efficient, but the 8D Duracells are here and working. Use what you have. Upgrade later when the case is clear.</p>
+
+        <p>The temporary ground mount for the 5-panel string is exactly that — temporary. Finding the right position requires clearing a sightline, which is work for a separate day. For now, the panels are oriented correctly and producing, and the bank is charging. That is enough to keep the build moving.</p>
+
+        <div class="sh-callout">
+          <strong>Active harvest:</strong> 700W total (500W on 24V + 200W on 12V). Battery bank: two 8D Duracell lead-acid, 24V, topped up. Full target: 2,800W panel capacity once the ground mount is in its current setup.
+        </div>
+
+        <div class="sh-log-page-nav">
+          <a href="2026-04-22-springhouse-build-start.html">← Build Log Reborn</a>
+          <a href="2026-04-26-timbers-fence-posts-and-solar-tool-charging.html">Next: Timbers, Fence Posts, and Solar-Charged Tools →</a>
+        </div>
+
+      </article>
+    </div>
+  </div>
+
+  <!-- ── Footer ── -->
+  <footer class="sh-footer">
+    <div class="sh-footer-inner">
+      <span class="sh-footer-brand">Springhouse Project</span>
+      <span class="sh-footer-tag">Off-grid build log — solar, greenhouse, rural infrastructure, practical resilience</span>
+    </div>
+  </footer>
+
+</body>
+</html>
